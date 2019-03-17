@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+<script>
+    //事件绑定
+    // $('li').on("mousemove",function () {
+    //     $(this).css('background','red')
+    // }).on('mouseout',function(){
+    //     $(this).css('background','green')
+    // })
+    //off 1.event   type
+    //    2.callback  name
+    //事件解绑
+    //  $('li:eq(3)').off('mousemove');
+
+
+    //事件代理 绑定 解绑
+    $("ul").on('mouseover','li:even',function () {
+        $(this).css('background','red')
+    })
+    $("ul").on('mouseout','li:even',function () {
+        $(this).css('background','green')
+    })
+    //此时新绑定的li 也有事件了
+    $('<li>new</li>').appendTo('ul');
+
+</script>
+</body>
+</html>

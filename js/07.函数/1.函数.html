@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--<p>111</p>-->
+		<!--<input type="button" name="btn" id="btn" value="按钮" />-->
+		<script type="text/javascript">
+//			编程js函数的概念
+//			函数的当它被调用执行的可重复使用的代码块
+	/*  函数分类:
+	       内置函数(系统函数 官方函数)
+          alert()  pareseInt()  document.write()
+
+               自定义函数
+          */
+
+// 1.创建函数四种方法
+	//第一种函数的声明方式创建  使用函数调用模式调用函数时，非严格模式下，this被绑定到全局对象；在严格模式下，this是undefined
+
+	//		（1）.
+// 无参函数
+	//		function wc(){
+	//			for(var i=0;i<10;i++){
+	//				document.write('hello word!<br/>');
+	//			}
+	//		}
+	//		wc();
+
+
+	//		（2）.有参函数
+	//		function yc(n){
+	//			for(var i=0;i<n;i++){
+	//				document.write('hello world! ---'+i+'<br/>')
+	//			}
+	//		}
+	//		yc(8);
+
+	//		（3).多参传人
+	//		function dc(num1,num2){
+	//			document.write('num1+num2的结果为：'+(num1+num2))
+	//		}
+	//		dc(4,6);
+
+	//第二种使用匿名函数
+	//		var add3=function(num1,num2){
+	//			return num1+num2
+	//		}
+	//		alert(add3(10,20));
+
+	//第三种利用function对象来创建函数
+	// 		var add2 = new Function("num1", "num2", "return num1 + num2");
+	// 		add2(2,3)
+    // 第四种自执行函数
+    //     (function(){
+    //         console.log('qqq')
+	// 	}())
+
+    //    (function(){
+    //        console.log('mmm')
+	//    })()
+// 2.函数方法调用
+// 	第一种  函数调用模式
+	//     let dy = function (a,b) {
+	//         let c=a+b
+	// 		console.log(c)
+	//     }
+	//     dy(3,4)
+// 第二种 对象方法调用
+	//     let dx={
+	//         name:'zs',
+	// 		age:18,
+	// 		fs:function (a,b) {
+	// 			let c= a+b
+	// 			console.log(c)
+	//         }
+	// 	}
+	// 	dx.fs(3,4)
+// 	第三种 构造函数调用 ：如果函数或者方法调用之前带有关键字new，它就构成构造函数调用
+       // 返回this对象是dx
+       // 如果有return，则返回return的结果，如果没有就会返回this。
+		// function gz() {
+		// 	this.a=18
+       //      console.log(this)// 此处this指的是dx  {a:18}
+		// }
+		// let dx= new  gz()
+       //    console.log(this)//此处this指的是window
+		// console.log(dx.a)//18
+       //  console.log(dx)//{a:18}
+// 第四种apply、call函数调用  就是为了改变函数体内部 this 的指向。
+// 			function add(a,b)
+// 			{
+// 				alert(a+b);
+// 			}
+// 			function sub(a,b)
+// 			{
+// 				alert(a-b);
+// 			}
+// 			add.call(sub,3,1);
+// 区别
+// 		var func = function(arg1, arg2) {
+// 		}
+// 		func.call(this, arg1, arg2);
+// 		func.apply(this, [arg1, arg2]);
+
+
+//		3.arguments 函数
+//      [注]在每一个函数内都有一个内置的数组,是一个变量叫做arguments,
+//      arguments可以存储当前函数传人的所有函数,而且是通过传参的顺序,进行排列的
+// 		function sum(){
+// 			 var sum =0;
+// 			 console.log(arguments)
+// 			 for(var i=0;i<arguments.length;i++){
+// 			  console.log(arguments[i])
+// 			  // console.log(sum += arguments[i])
+// 			 }
+//
+// 		}
+// 		sum(5,3,6)
+
+//	    4.函数的返回值
+//      如果我们要是外部获取到函数内运行的结果可以通过return语句跟后面要返回的值来实现返回值
+//		函数执行到return语句之后就执行结束 跟在return后面的其他语句执行不到
+//		表达式
+//		1.表达式的值(return后面表达式的值)
+//		2.表达式的功能(函数名)
+//		function add(num1,num2){
+//			return num1+num2;
+//		}
+//		var result = add(3,4);
+//		alert(result);
+
+//		5.函数作用域
+//      全局作用域声明的变量 全局变量
+//      局部作用域声明的变量   局部变量 局部变量的生命周期和生效的范围 都是声明改变量的函数区域 当函数调用完成以后就销毁
+//      如果重名 就执行就近原则
+//		var a =10;
+//		function sum(){
+//		 var a=5;
+//			alert(a) //5
+//		}
+//		alert(a);//10
+//		sum();
+//		alert(a)//10
+
+
+//6.函数的递归
+//     递归概念:函数可以自己调用自己
+//       方法:
+//       1.首先去找临界值 既无需计算,获得的值
+//       2.找这一次和上一次的关系
+//       3.假设当前函数已经可以使用了 调用自身上一次的运行结果再写出这次的运行结果
+//        特点:1.必须有参数 2.必须有return 3.短时间内使内存剧增 容易造成计算机崩溃
+//       function sum(n){
+//       	if(n==1){
+//       		return 1;
+//       	}
+//           console.log(n)
+//       	return sum( n - 1);
+//
+//       }
+//       sum(10);
+
+//7.事件驱动函数
+//         window.onload=function(){
+//          	var oBtn = document.getElementById("btn");
+//          	oBtn.onclick=function(){
+//          		alert("点击了！！！")
+//          	}
+//          }
+
+
+        </script>
+	</body>
+</html>

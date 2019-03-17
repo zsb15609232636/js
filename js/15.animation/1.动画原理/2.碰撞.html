@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>匀速</title>
+</head>
+<body>
+<style>
+    body{
+        overflow: hidden;
+    }
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+    }
+</style>
+<div id="div">
+
+</div>
+<script>
+    let speedx=3;
+    let speedY=3;
+    let div =document.getElementById('div')
+    function move() {
+        // Window.getComputedStyle()方法返回一个对象，
+        let currentlet = parseInt(window.getComputedStyle(div).left)
+        let currentTop = parseInt(window.getComputedStyle(div).top)
+        check_border_conllision(div)
+        let left = currentlet+speedx;
+        let top = currentTop+speedY;
+        div.style.left=left+'px'
+        div.style.top=top+'px'
+
+    }
+    function check_border_conllision(el){
+        let style=window.getComputedStyle(div)
+        let left =  parseInt(style.left);
+        let top =  parseInt(style.top);
+        let With = parseInt(style.width);
+        let Hight = parseInt(style.height);
+        if (left<0){
+            left=0
+            speedx = -speedx
+        }
+        if(left>window.innerWidth-With){
+            left=window.innerWidth-With
+            // speedx=-speedx
+            speedx =-(Math.random()*5)
+        }
+        if (top<0){
+            top=0
+            speedY = -speedY
+        }
+        if(top>window.innerHeight-Hight){
+            top=window.innerHeight-Hight
+            // speedY=-speedY
+            speedY =-(Math.random()*5)
+        }
+        el.style.top=top+'px'
+        el.style.left=left+'px'
+    }
+
+    setInterval(function () {
+        move()
+        // check_border_conllision()
+    },20)
+
+</script>
+</body>
+</html>

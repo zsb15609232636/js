@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>元素节点</title>
+</head>
+<body>
+<script>
+    window.onload=function () {
+        //查找元素节点属性
+            //查找当前元素节点   document.getElementById(id)
+            // 元素节点属性 有两个
+        //          1.tagName 获取元素节点名
+        //          2.innerHTML获取元素节点标签间的内容  如果赋值的话它会直接解析标签
+        //             let jd =document.getElementById("div1")
+                    // console.log(jd.tagName)
+                    // console.log(jd.innerHTML)
+                    // jd.innerHTML="<h1>innerHTML赋值</h1>"   它会直接解析掉
+        // html的属性元素
+            // id
+            // title
+            // style  在style样式中 background-color 中有'-' 在访问时将'-'去掉 将后面单词的首字母大写
+            // className  在获取class  必须使用className
+
+              // 访问这些属性：1.元素节点.属性名   2. 元素节点[属性名]
+             // console.log('jd.id:'+jd.id)
+             // console.log('jd.title:'+jd.title)
+             // console.log('jd.className:'+jd.className)
+
+             // console.log('jd.style.color:'+jd.style.color)
+             // jd.style.color='blue'  //修改字体颜色
+            // console.log('jd.style.color:'+jd.style.color)
+            // 在style样式中 background-color 中有'-' 在访问时将'-'去掉 将后面单词的首字母大   写
+           // console.log('jd.style.background-color:'+jd.style.backgroundColor)
+
+           //  但上述获取style样式的方法只能是获取标签上的样式  如果要获取外联的样式
+           //  方法1
+           //      let width = getComputedStyle(div1)['width']  //只有谷歌 火狐 苹果支持  IE不支持
+           //      console.log(width)
+          //  方法2
+          //       元素节点.currency[获取元素类型]；IE
+
+           // 解决兼容
+           //  function getStyle(elem,attr){
+           //      return elem.currentStyle ? elem.currentStyle[attr]:getComputedStyle(elem)[attr]
+           //  }
+           //  console.log(getStyle(div1,'width'))
+
+        //获取元素节点的方法
+             // document.getElementById()
+
+            // document.getElementsByTagName()  可以从某个节点下查找
+                   // let tagname=document.getElementsByTagName('li')
+                   // console.log(tagname)
+                   // let ul = document.getElementById('ul')
+                   // let lis =ul.getElementsByTagName('li')
+                        // lis[i] //标签元素的文本内容
+                   // console.log(lis) //获取id=ul 下的li里的标签
+                   //    for(let i=0;i<lis.length;i++){
+                   //         console.log(lis[i])
+                   //    }
+
+            //document.getElementByName() 不支持从某个节点下查询  只支持从document下面查询
+                   //参数：name的值  返回值:返回一个符合条件的元素节点的数组
+                    //一般情况下只在文本输入框节点下写name属性
+                // let name = document.getElementsByName('name')
+                // console.log(name)
+
+          // document.getElementsByClassName() 可以从某个节点下查找  低版本浏览器上不支持
+          //       let ul =document.getElementById('ul')
+          //       let cla= ul.getElementsByClassName('box')
+          //       console.log(cla.length)
+          //       for(let i=0;i<cla.length;i++){
+          //           console.log(cla[i].innerHTML)
+          //       }
+
+
+    }
+
+</script>
+<style>
+    #div1{width: 400px;height: 300px;}
+</style>
+<div id="div1" title="title1" class="wb1" name="name" style="color: red;
+background-color:rosybrown ">网页文本</div>
+<div id="div2">
+    <span name="name"></span>
+</div>
+
+<ul id="ul">
+    <li class="box">文本1</li>
+    <li>文本2</li>
+    <li class="box">文本3</li>
+    <li>文本4</li>
+    <li>文本5</li>
+</ul>
+<ul>
+    <li>文本6</li>
+    <li class="box">文本7</li>
+    <li>文本8</li>
+    <li class="box">文本9</li>
+    <li>文本10</li>
+</ul>
+</body>
+</html>

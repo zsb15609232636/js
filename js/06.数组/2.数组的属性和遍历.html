@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数组的属性和遍历</title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			1.数组的长度 arr.length访问 数组元素的个数
+			length属性 不是只读的 可以设置的
+			*/
+			// var arr =['red','blue','green']
+			// alert(arr.length)
+			// arr.length=2;
+			// alert(arr)
+
+
+
+//			2.数组的下标
+//			数组元素的访问和赋值 都是通过数组的下标完成 ：数组的长度(length)-1
+
+          // var arr=[10,20,30,40,50]
+//           数组的下标可以是变量或者表达式
+// 			alert	(arr[1+2]);
+
+
+
+//			3.数组遍历:数组和循环结合使用  JS中数组和循环是绝配
+             //1.for循环
+          	// var arr =['red','blue','green']
+			 //  for(var i=0;i<arr.length;i++){
+				// console.log(arr[i])
+			 //  }
+
+
+			//2.for...in进行循环 快速遍历
+			// var arr=['red','blue','green']
+			// for(var i in arr){
+			// 	document.write(arr[i]+"<br />")
+			// }
+
+           // 3.forEach() 用于遍历数组无返回值，会改变原来数组中的值
+           //  let arr = [1, 3, 12, 2, 20, -1, 6, 17];
+           //  arr.forEach((item, index, array) => {
+           //      array[index] = item * 2;
+           //  });
+           //  console.log(arr);
+
+           // 4.map() 用于遍历数组，返回处理之后的新数组
+           //  const arr = [1, 3, 12, 2, 20, -1, 6, 17];
+           //  const newArr = arr.map((item, index, array) => item * 2);
+           //  console.log(arr);					//	[1, 3, 12, 2, 20, -1, 6, 17]
+           //  console.log(newArr);					//	[2, 6, 24, 4, 40, -2, 12, 34]
+
+			// 5.filter() 用于筛选数组中满足条件的元素，返回一个筛选后的新数组
+            // const arr = [1, 3, 12, 2, 20, -1, 6, 17];
+            // const newArr = arr.filter((item, index, array) => item < 5);
+            // console.log(arr);					//	[1, 3, 12, 2, 20, -1, 6, 17]
+            // console.log(newArr);					//	[1, 3, 2, -1]
+
+            // 6.every() 用于判断数组中的每一项元素是否都满足条件，返回一个布尔值
+            // const arr = [1, 3, 12, 2, 20, -1, 6, 17];
+            // const bool = arr.every((item, index, array) => item < 12);
+            // console.log(bool);					//	false
+
+
+            // 7.some() 用于判断数组中是否存在满足条件的元素，返回一个布尔值
+            // const arr = [1, 3, 12, 2, 20, -1, 6, 17];
+            // const bool = arr.some((item, index, array) => item < 12);
+            // console.log(bool);					//	true
+
+		</script>
+	</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>async/await</title>
+</head>
+<body>
+
+<script>
+    // async function fn(){ //表示异步  这个函数里面有异步任务
+    //     let result = await xxx //表示后面结果需要等待
+    // }
+
+    // async特点
+    // 1.await只能放到async函数中
+    // 2.相比genrator语义化更强
+    // 3.await后面可以是promise对象 也可以是数字、字符串、布尔
+    // 4.async 函数返回是一个promise对象
+    // 5.只要await语句后面promise状态变成了reject 那么整个async函数会中断执行
+
+
+    async function fn() {
+        // return 'welcom';
+        let a=  await Promise.resolve('success')
+        console.log(a)
+    }
+    fn().then(res=>{
+            console.log(res)
+        }).catch(
+        err=>{
+            console.log(err)
+        })
+
+</script>
+</body>
+</html>

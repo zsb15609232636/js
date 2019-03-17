@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+1.  读取localStorage 的json数组
+将json数据格式转换为的数组存到todos数组中
+todos:JSON.parse(window.localStorage.getItem('todos_key') || '[]')
+2.存储localStorage
+todos:{
+    deep:true,//深度监视
+    handler:function (newValue,oldValue) {
+    //将todos最新的值保存到localStorage  将数组转换为json数据格式
+    JSON.stringify(window.localStorage.setItem('todos_key',newValue))
+    }
+}
+</body>
+</html>

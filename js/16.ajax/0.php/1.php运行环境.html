@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PHP</title>
+</head>
+<body>
+<h2>Php运行环境</h2>
+<p>
+    1.安装xampp-win32-7.2.1-0-VC15-installer.exe （php运行环境），一路next  最后选择English语言
+    2.xampp的aphche服务启动不起来https://www.cnblogs.com/upwifi/p/4492261.html
+    3.如果修改配置 就按localhost:新配置端口名  启动  或者点击admin按钮启动
+    4.他访问的跟目录为（C:\xampp\htdocs  默认安装情况下）
+    5.在该目录下可以新建PHP文件可以访问执行
+</p>
+<h2>php_IP和port</h2>
+<p>
+    www.baidu.com ===> DNS ===> 192.168.0.2:80 ===> http server
+    IP：表示网络上的一个终端
+    port：标识的是终端上的一个应用
+</p>
+
+<h2>php知识</h2>
+<p>
+    1.服务器安装环境配置
+    2.端口及IP基本常识
+    3.简单认识PHP（hello_Php）
+    4.基本语法：
+        1.定义变量：
+            局部变量  echo '局部变量x为' .$x;
+            全局变量  echo '全局变量x为:' .$GLOBALS['x'];
+        2.数据类型：
+            1.字符串：
+                    单引号   $txt1='hello'
+                    双引号   $txt2="world"
+                    长度     echo strlen($text3);
+                    查找     echo strpos($text3,'he');
+            2.数字：
+                    整数    $int =3;
+                    浮点    $float = 3.3;
+            3.布尔：        $bool=true;
+            4.数组：
+                    数值数组；    $numbers=array(1,2,3,4,5);  echo $numbers[2];
+                    关联数组：    $person=array('name'=>'xiaomao','age'=>20);    echo $person['name'];
+                    数组的遍历：
+    5.动态网页原理
+</p>
+</body>
+</html>

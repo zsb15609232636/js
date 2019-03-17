@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="scss.css">
+    <title>弹性盒</title>
+</head>
+<p>
+    <!--设置为弹性盒之后  子元素的float  clear 和vertical-align属性将失效-->
+    <!--
+    定义在弹性盒父元素上
+
+    flex-direction                  子元素排列顺序
+              row            横向排列
+              row-reverse    横向反序排列
+              column         纵向排列
+              column-reverse  纵向排列反序
+
+   justify-content                 子元素填充位置(不换行)
+              flex-start           从开始位置填充
+              flex-end             从末尾开始填充
+              center               将内容设置在中间
+              space-between        第一个在最开始  最后一个在最末尾
+              space-around         平均分配间隔
+
+   align-items                     子元素在父元素位置(不换行)
+             flex-start             最顶部
+             flex-end               最底部
+             center                 中间
+             baseline               子元素文字基线在一行
+
+
+   flex-wrap                        子元素换行
+            nowrap
+            wrap
+            wrap-reverse
+    align-content
+            flex-start
+            flex-end
+            center
+            space-between
+            space-around
+    -->
+    <!--
+    定义在弹性盒子元素上
+
+    order:默认按照顺序排列  （调节显示位置  代码中位置不变）
+         .box div:nth-child(2){order:-1}
+    flex-grow:    项目等于放大 在没有设置宽度的情况下   默认为0  宽度为内容宽
+                 如果子元素都是1的话  等于子元素将父元素平分
+                如果其余是1  某一个为2的话 则这个为其余子元素的2倍
+
+    flex-shrink  定义项目缩小比例  默认为1
+                 在定义宽度的情况下 将所有的子元素flex-shrink 定义为1
+                                    某一个元素flex-shrink定义为0  则当空间不足的情况下 某个元素宽不变 其余等比例缩小
+   flex-basis:   在flex-grow的状态下 某个元素定义为固定数值  其余按照父元素剩余空间进行均分
+
+    flex 简写
+   flex: flex-grow  flex-shirnk  flex-basis
+   flex:auto  //flex:1 1 auto;
+   flex:none //flex:0 0 auto;
+
+
+   align-self:属性用于设置弹性元素自身在纵向轴方向上的位置(可以定义某个子元素)
+             flex-start
+             flex-end
+             center
+    -->
+</p>
+<body>
+<div class="box">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+</div>
+</body>
+</html>

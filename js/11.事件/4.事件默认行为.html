@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件默认行为</title>
+</head>
+<body>
+<p>
+    javaScript事件本身所具有的属性，例如a标签的跳转，submit按钮的提交，右键餐点 文本框的输入
+    阻止默认行为的方式
+    event.preventDefault()    event.returnValue = false   ;return false
+</p>
+<a href="">test</a>
+<script>
+    let olink = document.getElementsByTagName('a')[0]
+    olink.onclick=function (e) {
+        let event = e||event
+        event.preventDefault()
+        console.log(olink.innerHTML)
+    }
+</script>
+</body>
+</html>

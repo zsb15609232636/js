@@ -1,0 +1,66 @@
+<html>
+<head>
+    <title></title>
+    <meta chartset='utf-8'>
+</head>
+<body>
+<style type="text/css">
+    #div1{display: none;}
+</style>
+<form action='php_ajax.php' method='post'>
+    用户名： <input type='text' id="input1"  name="username">
+    <input type='submit' value='注册'>
+</form>
+<div id="div1"></div>
+<script type="text/javascript">
+    var input1=document.getElementById("input1")
+    var div1= document.getElementById("div1")
+
+    input1.onblur=function(){
+        let val= this.value
+        getAjax('./user3.php','username='+val,function(cs){
+            div1.style.display='block';
+            div1.innerHTML=cs;
+        })
+
+    }
+
+    function   getAjax(url,data,hdFn){
+        // 1.创建一个xhr对象
+        var xhr = new XMLHttpRequest();
+        //2.连接我们的后台地址
+        xhr.open('POST',url,true)
+        //3.xhr对象的readyState属性发生了改变  这个事件才会被X`触发
+        //readyState
+        //0==>xhr对象已经创建  但是还没有进行初始化操作
+        //1==>xhr对象已经调用了open方法
+        //2==>xhr已经发送了ajax请求
+        //3==>已经返回了部分数据
+        //4==>数据已经全部返回
+        xhr.onreadystatechange=function(){
+            if(xhr.readyState ==4){
+                // status
+                //     200 成功
+                //     301 重定向
+                //     404未找到页面
+                //     500服务器错误
+                if(xhr.status==200){
+                    hdFn(xhr.responseText)
+                }
+            }
+            return
+
+        }
+        // 3.设置请求头
+        xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded')
+        //发送请求
+        xhr.send(data)
+
+    }
+
+
+
+
+</script>
+</body>
+</html>

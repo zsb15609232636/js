@@ -1,0 +1,52 @@
+<html>
+<head>
+    <title>跨域</title>
+</head>
+<body>
+<input type="text" id='input'>
+<ul id="ul">
+
+</ul>
+
+<script type="text/javascript">
+    // setTimeout():函数节流
+
+    var input= document.getElementById("input");
+    var ul =document.getElementById('ul');
+    var timer=null;
+    input.oninput=function(){
+        var This =this
+        clearTimeout(timer)
+        setTimeout(function(){
+            ul.innerHTML=''
+            createdJson('https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd='+This.value+'&json=1&p=3&sid=1468_21093_28415&req=2&bs=gwy&pbs=gwy&sc=eb&csor=0&cb=hide&_=1550567303056',function(data){
+                console.log(data)
+                for(let i=0;i<data.s.length;i++){
+                    var li = document.createElement('li')
+                    li.innerHTML=data.s[i]
+                    ul.appendChild(li)
+
+                }
+            });
+
+        },600)
+
+
+    }
+
+
+    function createdJson(url,fn){
+        var script =document.createElement('script')
+        var reg= /cb=([^&]+)/;
+        script.src=url;
+        var cbName=url.match(reg)[1];
+        window[cbName]=fn;
+        document.body.appendChild(script);
+        script.onload=function(){
+            document.body.removeChild(script)
+        }
+    }
+
+</script>
+</body>
+</html>

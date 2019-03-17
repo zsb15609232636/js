@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类和继承</title>
+</head>
+<body>
+<script>
+// class里面取值函数（getter）,  存值函数（setter）
+    class Person{
+        constructor(){
+
+        }
+        set ppp(val){
+            console.log(`设置aaa属性，值为 ：${val}`)
+        }
+        get aaa(){
+            // return `获取aaa的属性:${val}`
+        }
+    }
+    let p1 = new Person();
+    p1.ppp='123'
+
+</script>
+
+</body>
+</html>

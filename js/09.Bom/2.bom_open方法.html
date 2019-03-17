@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>bom下面的open方法</title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			window:
+				document  history  location  screen  	navigator
+
+
+			 *window.open()
+			 * open()
+			 * 1.要加载url
+			 * 2.窗口的名称或者窗口的目标
+			 * 3.一串具有特殊意义的字符串
+			 *
+			 */
+			window.onload = function(){
+				var oBtn =document.getElementById('btn');
+				oBtn.onclick=function(){
+					//open('https://www.baidu.com/')
+					//如果只用第一个参数，调用open方法会打开新窗口，加载url
+
+					//open('https://www.baidu.com/','百度');
+//					注:第二个参数,是给打开的新窗口起的名字,然后以后再去加载url 就在这个已经起好名字的目标窗口加载url
+
+//				open('https://www.baidu.com/','百度','width=400,height=400,top=200,left=200');
+				//第三个参数为新打开的窗口的参数
+				}
+			}
+		</script>
+		<input type="button" value="按钮" id="btn" />
+	</body>
+</html>

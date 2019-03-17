@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>父窗口</title>
+	</head>
+	<body>
+		<style type="text/css">
+		body{
+		background-color:yellow;	
+		}
+			
+		</style>
+		<script type="text/javascript">
+			window.onload=function(){
+				var oBtn = document.getElementById('btn');
+				oBtn.onclick=function(){
+					open('2-2.sub.html','子窗口','width=400,height=400,top=200,left=200');
+				}
+			}
+		</script>
+		<input type="button" value="打开子窗口" id="btn" />
+	</body>
+</html>

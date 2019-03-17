@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>函数默认参数、箭头函数、剩余参数</title>
+</head>
+<body>
+<script>
+    // 1.函数默认
+    function  show(a='函数',b='默认') {
+        console.log(a,b)
+    }
+    show('welcome')  //welcome  默认
+    show('welcome','') //welcom
+
+
+    //2.函数参数默认已经定义了  就不能在函数里面使用let const声明
+    // function show(a){
+    //     let a=101//报错
+    // }
+    // show()
+
+
+    //3.扩展运算符、重置运算符  相互切换  ...
+   //[1,2,3,4,5]   ...[1,2,3,4,5] ->1,2,3,4,5
+    //1,2,3,4,5 -> ...a ->[1,2,3,4,5]
+    // sort()数组排序
+    function  show2(...a) {
+      console.log(a)
+    }
+    show2(1,2,3,4,5)
+//
+    function show3() {
+        return Array.prototype.slice.call(arguments).sort()
+    }
+    console.log(show3(10,-2,101,-4))
+
+    function show4(b,c,...a){
+       console.log(b,c,a.sort())
+    }
+   show4(10,-2,101,-4)
+
+    //复制数组
+    let arr3=[1,2,3,4,5]
+    let arr4=[...arr3]
+    console.log(arr3,arr4)
+
+
+    //4.箭头函数
+      //箭头函数中this指的是你当前定义的对象中的this
+      //箭头函数中没有arguments 用'...'
+      //箭头函数没有构造函数
+// let 函数名=(参数)=>{
+//     语句
+//     return 返回值
+// }
+
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

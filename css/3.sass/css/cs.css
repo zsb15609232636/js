@@ -1,0 +1,84 @@
+h2 {
+  font-size: 30px;
+  font-weight: bold;
+  color: blue; }
+
+p {
+  font-size: 14px; }
+
+p {
+  display: block; }
+
+ul {
+  margin: 0; }
+  ul li {
+    list-style: none; }
+    ul li a {
+      border: 1px red solid; }
+
+div {
+  background-color: red;
+  background-repeat: no-repeat;
+  background-position: 0 0; }
+
+a:hover {
+  border: 1px red solid; }
+
+div {
+  background-color: red; }
+
+.box_2 {
+  border: 1px red solid; }
+
+.box_1 {
+  border: 1px red solid; }
+
+.box_2 {
+  border: 1px red solid; }
+
+.box_3 {
+  border: 1px red solid; }
+
+.box_11 {
+  border: 2px solid blue; }
+
+.box_12 {
+  border: 2px solid blue; }
+
+div {
+  width: 6.25rem; }
+
+.box_3 {
+  border: 1px red solid; }
+
+.box_2 {
+  border: 1px red solid; }
+
+.box_1 {
+  border: 1px red solid; }
+
+.btn, .btn-success {
+  width: 100px;
+  height: 50px; }
+
+.btn-success {
+  background: green; }
+
+.btn2-success {
+  width: 100px;
+  height: 50px; }
+
+.btn2-success {
+  background: green; }
+
+.btn3-success {
+  width: 10px;
+  height: 20px;
+  background-color: red; }
+
+.btn3-error {
+  width: 50px;
+  height: 100px;
+  background-color: green; }
+
+/*# sourceMappingURL=cs.css.map */

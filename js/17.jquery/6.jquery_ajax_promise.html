@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<script>
+    // 定义一个使用promise的ajax请求,这里依赖jquery
+    // 参数中请求url为必填参数
+    const ajaxPromise=  param => {
+        return new Promise((resovle, reject) => {
+            $.ajax({
+                "type":param.type || "get",
+                "async":param.async || true,
+                "url":param.url,
+                "data":param.data || "",
+                "success": res => {
+                    resovle(res);
+                },
+                "error": err => {
+                    reject(err);
+                }
+            })
+        })
+    }
+
+    /*
+       第一个请求
+    */
+    let step1 = () => {
+        ajaxPromise({
+            "url":"",
+        }).then(res => {
+            console.log("第一个请求正确返回==>"+res);
+            step2(res);
+        }).catch(err => {
+            console.log("第一个请求失败");
+        })
+    }
+
+    /*
+       第二个请求
+    */
+    let step2 = (res) => {
+        ajaxPromise({
+            "type":"get",
+            "url":"",
+            "data":{"name":res}
+        }).then(res => {
+            console.log("第二个请求正确返回==>"+res);
+        }).catch(err => {
+            console.log("第二个请求失败==>"+err);
+        })
+    }
+
+    step1();
+
+
+
+</script>
+</body>
+</html>

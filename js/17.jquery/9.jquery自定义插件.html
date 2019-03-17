@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>自定义插件</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+<p>
+    jQuery为开发插件提拱了两个方法，分别是：
+    jQuery.fn.extend();
+        对jQuery.prototype进得扩展，就是为jQuery类添加“成员函数”。jQuery类的实例可以使用这个“成员函数”。
+    jQuery.extend();
+        为jQuery类添加类方法，可以理解为添加静态方法
+</p>
+
+<div></div>
+<div></div>
+<script>
+    //1.jquery的插件是定义在jquery.fn的基础上的
+    //2.命名冲突的解决
+    //3.循环jquery对象中的每一个元素
+    //4.在函数中将jquery对象返回（this）
+
+    (function ($) {
+        $.fn.extend({
+            randomColor:function () {
+                //this指向的就是我们通过$选择器选取到的所有元素组成的伪数组
+                function random() {
+                    var r = Math.floor(Math.random()*256)
+                    var g = Math.floor(Math.random()*256)
+                    var b = Math.floor(Math.random()*256)
+                    return 'rgb('+r+','+g+','+b+')'
+                }
+                this.each(function (index) {
+                    $(this).css({
+                        backgroundColor:random()
+                    })
+                })
+                return this
+            }
+        })
+    })(jQuery)
+    $('div').randomColor()
+</script>
+</body>
+</html>

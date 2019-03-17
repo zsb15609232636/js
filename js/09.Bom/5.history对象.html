@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>history对象</title>
+</head>
+<body>
+<script>
+    // history 是window的属性，保存用户上网的记录
+
+             // history.length  用于返回当前history对象中的数量
+            // history.back()  返回上一条记录
+            // history.forward()  前进到下一条记录
+            // history.go()  传人参数  当为0的时候是重载当前页面  当为正数的时候前进n条记录  当为负数的时候后退n条记录
+
+
+    window.onload=function () {
+        let obtn = document.getElementById('btn')
+        obtn.onclick=function () {
+            alert(history.length)
+        }
+
+        let obtn1 = document.getElementById('btn1')
+        obtn1.onclick=function () {
+            history.back()
+        }
+
+        let obtn2 = document.getElementById('btn2')
+        obtn2.onclick=function () {
+            history.forward()
+        }
+
+        let obtn3 = document.getElementById('btn3')
+        obtn3.onclick=function () {
+          history.go(-2)
+        }
+    }
+</script>
+<button type="button" id="btn" value="按钮">按钮</button>
+<input type="button" id="btn1" value="history.back按钮">
+<input type="button" id="btn2" value="history.forward按钮">
+<input type="button" id="btn3" value="history.go按钮">
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>异步加载js</title>
+</head>
+<body>
+<p>
+    三种异步加载js
+        1.defer(只有IE能用，可以写在里面或者外面)
+    <!--<script src="js/cs.js" defer="defer"></script>-->
+        2.async异步加载  （加载完就执行）  async只能加载外部脚本  不能把js写在script 标签里  只可以写在引用脚本里
+        3.
+</p>
+<script src="js/tool.js"></script>
+<script type="text/javascript">
+
+
+    loadScript('js/cs.js',function () {
+        test();
+    })
+</script>
+</body>
+</html>

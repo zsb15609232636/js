@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+<script>
+    // 对象的组成：属性（对象中的变量）和方法（对象中的函数）
+    //         属性一般指静态的方法 ，方法一般指动态的内容
+
+
+    // 对象存储 数据和方法
+    // 对象中存储的数据叫做对象的属性
+    // 对象中存储的方法叫做对象的方法
+// 1.使用new运算符创建对象
+    let obj = new Object()
+    obj.name='张三'
+    obj.age=18
+    obj.show=function () {
+        console.log(this.name)
+    }
+    console.log(obj)
+    obj.show()
+    //2.使用字面量创建对象
+    let obj2={}
+    obj2.name='李四'
+    obj2.age=20
+    obj2['show']=function () {
+        console.log('13')
+    }
+    console.log(obj2)
+    console.log(obj2.name)
+    obj2.show()
+
+    //删除对象内容 delete
+    delete(obj2.name)//返回true或者false
+    console.log(obj2)
+
+</script>
+</body>
+</html>

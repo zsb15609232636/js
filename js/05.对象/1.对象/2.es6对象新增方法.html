@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象简洁语法</title>
+</head>
+<body>
+<script>
+    {
+    let name ='string';
+    let age =18;
+    let json={
+        name,
+        age,
+        showA(){  //一定注意，不要用箭头函数
+            return this.name
+        }
+    }
+    console.log(json.showA())
+    }
+
+    // 对象新增语法
+   // 1.Object.is()  用来比较两个值是否相等
+       //console.log(Number.isNaN(NaN)) // true  之前
+
+      // let b =Object.is(NaN,NaN);
+      // console.log(b)
+
+    //2.Object.assign() 用来合并对象 几个对象里的值合并，如果有相等的就后面的覆盖前面的
+    //   let 新的对象=  Object.assign(目标对象,source1,source2...)
+    // 用法：1.复制一个对象  2.合并一个对象
+
+
+    //   用户传的值和默认的值合并 有冲突的话用用户的值覆盖默认的值
+    //     function ajax(options){//用户传的值
+    //         let defaults={  //默认的值
+    //             type:'get',
+    //             header,
+    //             data:{}
+    //         }
+    //         let json =Object.assign({},defaults,options)
+    //     }
+    // 3.Object.keys()  循环
+        let {keys,values,entries} =Object
+        let json ={
+            a:1,
+            b:2,
+            c:3
+        }
+        for (let key of keys(json)){
+            console.log(key) // a b c
+        }
+        for (let values of values(json)){
+            console.log(value) // 1 2 3
+        }
+        for (let item of entries(json)){
+            console.log(item) // ["a",1],["b",2],["c",3]
+        }
+        // 4.对象身上扩展运算符
+        // let {x,y,...z} ={x:1,y:2,a:3,b:4};
+        // console.log(x,y,z)
+        //        快速复制一个json
+                    let json ={a:3,b:4};
+                    let json2={...json}
+                    console.log(json2)  //{a:3,b:4}
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+</head>
+<body>
+　map()是数组的一个方法，它创建一个新数组，其结果是该数组中的每个元素都调用一个提供的函数后返回的结果
+map()里面的处理函数接受三个参数，分别指代当前元素、当前元素的索引、数组本身。
+map:类似json  但是json的键只能是字符串
+    map 结构类似 key可以是任意类型
+<script>
+
+
+   // map.set(key,value); //设置一个值
+   let map = new Map();
+
+   map.set('a','aaa')//正常
+   map.set('b','bbb')//正常
+   map.set('c','ccc')//正常
+    console.log(map)  //{"a" => "aaa"}
+    console.log(map.get('a')) //aaa
+    console.log(map.has('a'))//true
+    //console.log(map.clear())//undeifead
+
+    for(let [key,value] of map) {
+       console.log(key,value)
+    }
+
+    map.forEach((value,key)=>{
+        console.log(value,key)
+    })
+</script>
+</body>
+</html>

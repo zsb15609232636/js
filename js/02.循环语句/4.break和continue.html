@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+		//break语句
+		//1.在switch语句中使流程跳出switch
+		//2.在循环语句中使流程跳出当前循环
+		// for(var i=0;i<100;i++){
+        // 	if((i + 1)%5 ==0 ){
+        // 		break;
+        // 	}
+        // 	document.write((i+1) +"<br/>")
+        // }
+
+
+//		continue语句
+//		只能在循环语句中使用,使本次循环结束,即跳过循环体中下面尚未执行的语句,接着进行下次是否执行的判断
+		for(var i=0;i<100;i++){
+			if((i + 1)%5 ==0 ){
+				continue;
+			}
+			document.write((i+1) +"<br/>")
+		}
+		</script>
+	</body>
+</html>

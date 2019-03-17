@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>子窗口</title>
+	</head>
+	<body>
+		<style type="text/css">
+		body{
+			background-color:blue;
+		}
+			 	
+		</style>
+		<script type="text/javascript">
+			/*
+			 opener  打开当前窗口的父窗口的window对象  IE不支持改属性
+			 * */
+			window.onload=function(){
+				var oBtn=document.getElementById('btn');
+				oBtn.onclick=function(){
+//					alert(opener);
+				opener.document.write('子窗口让我输出的')
+				}
+			}
+			
+		</script>
+		<input type="button" value="按钮" id="btn"/>
+	</body>
+</html>

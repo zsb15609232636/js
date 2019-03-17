@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>js基础</title>
+		<style type="text/css">
+			h2{font-size: 20px;font-weight: bold;}
+			p{font-size: 18px;}
+			span{font-size: 18px;color: #ff0000;}
+			.g-blank10{height: 10px;}
+			.g-blank20{border-bottom:dotted 2px;height: 20px;}
+		</style>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<h2>1.js组成</h2>
+		     <p>
+			(1).ECMAScript
+			(2)BOM 整个浏览器
+			(3)DOM 整个文档
+			  从<html>到</html>结束
+			</p>
+		<p>2.js的数据类型分为两大类<br>
+			1.基本数据类型<br>
+			    基本数据类型 只要是值相等 比较就相等
+			    基本类型数据  a只是把值给了b  b改变了值也不会影响a的值
+			 （1）数字 number<br>
+				Number类型包含整数和浮点数（浮点数数值必须包含一个小数点，且小数点后面至少有一位数字）两种值。
+				NaN:非数字类型。特点：① 涉及到的 任何关于NaN的操作，都会返回NaN   ② NaN不等于自身。
+				isNaN() 函数用于检查其参数是否是非数字值。
+				isNaN(123)  //false   isNaN("hello")  //true
+			 （2）字符串 string<br>
+				String（）和toString（）方法都是将其它类型的变量转换为字符串的方法。
+				但两者存在一定的区别：
+				x.toString(): 无法转换null和undefined
+			 （3）布尔值boolean<br>
+			 (4)特殊数据类型
+				null
+				undefined:只有一个值，即undefined值。使用var声明了变量，但未给变量初始化值，那么这个变量的值就是undefined。
+				<br>
+			2.三大引用类型
+					引用数据类型 不仅值要相等 引用也要相等  比较才相等（存储位置不同，用赋值解决）
+			        引用数据类型  a赋值给b时 a把地址和值都给了b  b的修改会影响到a的值
+				1.Object类型
+				我们看到的大多数类型值都是Object类型的实例，创建Object实例的方式有两种。
+				第一种是使用new操作符后跟Object构造函数，如下所示
+				var person = new Object();
+				person.name = "Micheal";
+				person.age = 24;
+				第二种方式是使用对象字面量表示法，如下所示
+				var person = {
+				　　name : "Micheal",
+				　　age : 24
+				};
+				2.Array类型
+				数组的每一项可以用来保存任何类型的数据，也就是说，可以用数组的第一个位置来保存字符串，
+				第二个位置保存数值，第三个位置保存对象....另外，数组的大小是可以动态调整的。
+				创建数组的基本方式有两种
+				第一种是使用Array构造函数，如下所示
+				var colors = new Array("red","blue","yellow");
+				第二种是使用数组字面量表示法，如下所示
+				var colors = ["red","blue","yellow"];
+				3 Function类型
+				每个函数都是Function类型的实例，而且都与其他引用类型一样具有属性和方法。函数通常是使用函数声明语法定义的，如下所示
+				function sum(num1,num2){
+				　　return num1 + num2;
+				};
+
+				这和使用函数表达式定义函数的方式相差无几。
+				var sun = function (num1,num2){
+				　　return sum1 + sum2;
+				};
+        <h2>3.自动数据类型转换</h2>//NaN 表示未定义或不可表示的值
+			<p>1.任何类型的数据与字符串相加，其他类型数据会自动转换成与字符串类型，字符串拼接，不再是数学意义上的相加而是拼接<br>
+			2.任何数据除了和字符串做相加运算外，先要将字符串转成数字再进行运算<br>
+			（1）与NaN做算数运算的结果都是NaN，包括本身相加也是NaN<br>
+			（2）字符串如果是纯数字字符串转成数字，否则转换成NaN<br>
+			var tmp =1 - '2';//-1 字符串'2' 转成了数字2<br>
+			var tmp =1 - "2a" //NaN的意思  not a number  '2a'转成数字为NaN<br>
+			</p>
+			/*
+			 算术运算符
+			 关系运算符
+			 */
+		<div class="g-blank10"></div>
+        <h2>4.基础_表达式和赋值运算符-1</h2>
+			<p>
+				赋值运算符 = 将等号右边的值赋值给等号左边的变量。<br>
+				复合赋值运算符：<br>
+				+= *=  %=<br>
+				var tmp =2+3<br>
+			</p>
+		<h2>5.强制数据类型转换</h2>
+			<p>
+				总结：任何其他数据类型除了和字符串做相加操作外，与数字类型做算数运算的时候，其他数据类型都会自动转换成数字<br>
+				特殊数据类型中：
+				null=>0
+				undefined=>NAN<br>
+				布尔值：true => 1; false =>0;
+			</p>
+			<p>
+				通过方法Boolean()进行强制数据类型转换<br>
+				【作用】将别的数据类型强制转换为布尔值 <br>
+
+				结论：1.直接转换var tmp =Boolean('待输入的值');alert(tmp)<br>
+					(1).数字0转成布尔值为false 所有非0的数字转换为布尔值都为true<br>
+					(2).空字符串转成布尔值为false 所有非空字符串转换成布尔值为true<br>
+					(3).null和undefined转成布尔值都是false<br>
+
+					(4).字符串 纯数字的字符串 =》 对应的数字  否则NaN<br>
+					var tmp =Boolean(1);//true <br>
+					var tmp =Boolean('');//false<br>
+			</p>
+			<p>
+				 2.var tmp =Number('待输入的值')将别的数据类型转化成数字<br>
+				 1.布尔值 true => 1 false => 0<br>
+				 2.字符串  纯数字的字符串 =>对应的数字 否则为NaN<br>
+				 3.特殊数据类型  null=>0  undefined=>NaN<br>
+			</p>
+			<p>
+				perseInt()兼容Number的功能，取整<br>
+				var tmp = parseInt("20a");//20<br>
+				var tmp = parseInt(3.124);//3<br>
+				parseFloat() 取浮点数  带小数的数字  可以将别的数据类型转化成带小数的数字<br>
+				var tmp =parseFloat("3.14");//3.14  类型为 number
+			</p>
+		<h2>6.一元运算符(只能操作一个值的运算符叫做一元运算符)</h2>
+			<p>
+				a++; 先输出后自增
+				++a; 先自增再输出
+				a--;
+				--a;
+			</p>
+		<h2>7.关系运算符</h2>
+			<p>
+				<   小于      a<b   a小于b时返回真；否则返回假
+				<=  小于等于  a<=b  a小于等于b时返回真；否则返回假
+				>   大于      a>b   a大于b时返回真；否则返回假
+			    >=  大于等于  a>=b  a大于等于b时返回真；否则返回假
+				==  等于      a==b  a等于b时返回真；否则返回假
+				!=  不等于    a!=b  a不等于b时返回真；否则返回假
+			</p>
+		<h2>8.逻辑运算符</h2>
+		<p>
+			&&  TRUE，如果 $a 与 $b 都为 TRUE。
+			||  TRUE，如果 $a 或 $b 任一为 TRUE
+		</p>
+	</body>
+</html>

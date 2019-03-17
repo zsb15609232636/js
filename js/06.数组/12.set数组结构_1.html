@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>set数据结构</title>
+</head>
+<body>
+<script>
+    var arr=[1,2,2,3,5,6,9,7]
+    let setarr=new Set(arr)
+    setarr.add('a')
+    setarr.delete(1)
+    setarr.has('a') //判断setArr里面又没有此值
+    setarr.size   //个数
+    // setarr.clear() //清空
+
+    // 循环
+    // for(let item of setarr){
+    //     console.log(item)
+    // }
+    //  set格式的数据变成数组  ==>[...set]
+    setarr.forEach((value)=>{
+        console.log(value)
+    })
+
+    // var arr1=Array.from(setarr);
+    let arr1=[...new Set(arr)]
+    console.log(arr1)
+
+
+    // ---------------------------------------------------
+
+
+</script>
+
+</body>
+</html>

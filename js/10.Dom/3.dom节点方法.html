@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>dom节点方法</title>
+</head>
+<body>
+<script>
+  // attributes：获取一个属性作为对象
+        // setAttribute  设置节点某个属性的值
+             //  1.与doucument的class属性范围区别，点操作是通过className,而set/getAttribute是通过class
+             //  2.设置用户自定义属性 setAttribute("xxx","yyy")   getAttribute("xxx")
+            //   3.可以删除掉用户某个属性 removeAttribute()
+      // getAttribute  获取某一个属性的值
+           // getAttribute方法不属于document对象，所以不能通过document对象获取，
+          // 只能通过元素节点的调用。
+
+
+    window.onload=function () {
+       // let jd= document.getElementById('div1')
+       //
+       //  jd.setAttribute('class','class2')
+       //  console.log(jd.getAttribute('class'))
+       //  jd.setAttribute("xxx","yyy")
+       //  console.log(jd.getAttribute('xxx'))
+       //
+       //  jd.removeAttribute('title')
+    }
+</script>
+<div id="div1" class="class1" name="name1" title="title">文本1</div>
+</body>
+</html>

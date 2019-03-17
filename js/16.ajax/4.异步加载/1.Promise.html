@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Promist</title>
+</head>
+<body>
+<p>
+    Promise:承诺 许诺
+    作用：解决异步回调问题
+    语法：
+     new Promise(
+        ).then(res=>{
+        }).catch(err=>{
+      })
+     Promise.resolve("aa") 将现有的东西 转成一个promise对象，resolve状态 成功状态
+     Promise.reject("aaa") 将现有的东西 转成一个promise对象，reject状态 失败状态
+     Promise.all([p1,p2,p3]) 把promise 打包，扔到一个数组里面，打完包还是一个promise对象
+          必须确保，所有的promise对象 都是resolve状态  都是成功状态
+     Promise.race([p1,p2,p3]) 只要有一个成功了  就返回
+</p>
+<script>
+    {
+        // 基本语法
+        let a=10;
+        new Promise(function (resolve, reject) {
+            if (a==1){
+                resolve('成功')
+            } else {
+                reject('失败了')
+            }
+        }).then(res=>{
+            console.log(res)
+        }).catch(err=>{
+            console.log(err)
+        })
+
+    }
+    // Promise.resolve("aa") 将现有的东西 转成一个promise对象，resolve状态 成功状态
+    {
+       let b= Promise.resolve("aa")
+        b.then(res=>{
+            console.log(res)
+        })
+        // 等价于
+       let b1= new Promise(resolve => {
+            resolve('aaa')
+        })
+        b1.then(res=>{
+            console.log(res)
+        })
+    }
+    // Promise.reject("aaa") 将现有的东西 转成一个promise对象，reject状态 失败状态
+    {
+        let b= Promise.reject("bb")
+        b.then(res=>{
+            console.log(res)
+        }).catch(err=>{
+            console.log(err)
+        })
+        // 等价于
+        let b1= new Promise((resolve, reject)=>{
+            reject("bbb")
+        })
+        b1.catch(err=>{
+            console.log(err)
+        })
+    }
+    {
+        let p1= Promise.resolve('aaa');
+        let p2= Promise.resolve('bbb');
+        let p3= Promise.resolve('ccc');
+        Promise.all([p1,p2,p3]).then(res=>{
+            let [res1,res2,res3]=res;
+            console.log(res1,res2,res3)
+        })
+    }
+</script>
+</body>
+</html>

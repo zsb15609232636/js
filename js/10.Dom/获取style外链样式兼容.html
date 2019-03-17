@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>style样式外链兼容</title>
+</head>
+<body>
+<script>
+    window.onload=function () {
+        // 解决兼容
+        function getStyle(elem,attr){
+            return elem.currentStyle ? elem.currentStyle[attr]:getComputedStyle(elem)[attr]
+        }
+        console.log(getStyle(div1,'width'))
+    }
+</script>
+<style>
+    #div1{width: 400px;height: 300px;}
+</style>
+<div id="div1" title="title1" class="wb1" name="name" style="color: red;
+background-color:rosybrown ">网页文本</div>
+</body>
+</html>

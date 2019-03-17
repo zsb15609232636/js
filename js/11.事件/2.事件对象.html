@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象</title>
+</head>
+<body>
+<div id="test">aaa</div>
+<input id="text" type="text"> <input type="button" value="提交">
+<p>事件对象：当触发某个事件时，会产生一个事件对象，这个对象包含着所有与事件有关的信息。包括导致事件的元素、事件的类型、
+以及其他与特定事件相关的信息。<br/>
+    通过事件绑定的执行函数是可以得到一个隐藏函数的。说明，浏览器会自动分配一个参数，这个参数其实就是event对象<br/>
+    Event对象获取方式<br/>
+    e.clientX,  e.clientY,(鼠标距离页面的可视区不包括导航栏)<br/>
+    e.pageX,  e.pageY,   <br/>(鼠标距离页面的可视区包括滚动隐藏部分)
+    e.offsetX,  e.offsetY,（鼠标距离点击事件源的位置部分包括滚动隐藏部分）
+</p>
+<style>
+    div{
+        width: 200px;
+        height: 100px;
+        background: #78b4ff;
+    }
+
+</style>
+<p>
+    event.target:表示的当前的这个事件源。
+    event.srcElement：表示的当前的这个事件源。
+
+</p>
+
+<script>
+ var jd = document.getElementById("test")
+ var cont =document.getElementsByTagName("input")[0]
+ var tj =document.getElementsByTagName('input')[1]
+    // jd.onclick=function (e) {
+    //     var evt = e || event
+    //         console.log(evt.clientX,evt.clientY)
+    //         console.log(evt.pageX,evt.pageY)
+    //         console.log(evt.offsetX,evt.offsetY)
+    //
+    // }
+
+    // document.onkeypress=function () {
+    //     //按下字符键触发
+    //     console.log("onkeypress")
+    // }
+    // document.onkeyup=function(){
+    //  //键盘弹起时触发
+    //     console.log('onkeyup')
+    // }
+    // document.onkeydown=function(){
+    //  //按下任意键触发
+    //     console.log("onkeydown")
+    // }
+ tj.onclick=function () {
+     jd.innerHTML +=cont.value
+     console.log(jd.innerHTML)
+     cont.value=''
+ }
+ cont.onkeypress=function (e) {
+      let evt =e || event
+     if(evt.keyCode == 13){
+         jd.innerHTML +=cont.value
+         console.log(jd.innerHTML)
+         cont.value=''
+     }
+
+ }
+
+</script>
+</body>
+</html>

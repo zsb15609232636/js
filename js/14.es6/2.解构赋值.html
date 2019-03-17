@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>解构赋值</title>
+</head>
+<body>
+<script>
+    {
+    // 1.解构赋值  注意：左右两边 结构格式要保持一致
+      let [a,b,c]=[10,3,23]
+      console.log(a,b,c)  //10 3 23
+    }
+    {
+    // 2.渲染json
+      let json={
+          name:'zs',
+          age:18,
+          job:"gz"
+      }
+      let {name,age,job}=json
+      console.log(name,age,job)//zs 18 gz
+    }
+    {
+    // 3.别名
+        let json={
+            name:'zs',
+            age:18,
+            job:"gz"
+        }
+    let {name,age,job:a}=json
+    console.log(name,age,a) //zs 18 gz
+    }
+
+    {
+        // 4.给默认值  z注意如果是null的话还要做判断 undifind可以直接用
+        let [a,b,c='暂无数据']=["a","b"]
+        console.log(a,b,c)
+    }
+
+    {
+        // 5.es6交互两个数的位置
+        let a =13
+        let b =4
+        [a,b]=[b,a]
+        console.log(a,b)//4 13
+    }
+    {
+        //6.解析函数的返回值
+        function getps(){
+            return{
+                a:10,
+                b:20
+            }
+        }
+        let {a,b}=getps()
+        console.log(a,b)//10 20
+    }
+</script>
+</body>
+</html>

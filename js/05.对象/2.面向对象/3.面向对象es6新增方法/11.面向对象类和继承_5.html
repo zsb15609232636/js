@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类和继承</title>
+</head>
+<body>
+<script>
+
+    // 之前的继承
+
+// //父类
+//     function Person(name){
+//         this.name=name;
+//         Person.prototype.showName=function () {
+//
+//             return `名字是${this.name}`
+//         }
+//
+//     }
+//     // let ps=new Person('zs',18)
+//     // console.log(ps.showName())
+//
+//     // 子类
+//     function Student(name,skill){
+//         Person.call(this,name)//继承属性
+//         this.skill=skill
+//     }
+//       Student.prototype=new Person()//继承方法
+//     //调用
+//     let stu1=new Student('li','逃学')
+//     console.log(stu1.name)
+//     console.log(stu1.showName())
+
+
+    // 父类
+    class Person{
+        constructor(name){
+            this.name=name;
+        }
+        showName(){
+            return `父类名字为${this.name}`
+        }
+    }
+    // 子类
+    class Student extends Person{//1.extends
+        constructor(name,skill){
+            super(name);//2.将父类的参数拉过来
+            this.skill=skill;
+        }
+        showskil(){
+            return `技能为：${this.skill}`
+        }
+
+        showName(){
+            super.showName();  //父级的方法执行
+            //TODO做子级事情
+            console.log('子类的showName')
+        }
+    }
+
+        let stu1=new Student('li','逃学')
+        // console.log(stu1.name)
+        console.log(stu1.showName())
+        // console.log(stu1.showskil())
+</script>
+
+</body>
+</html>

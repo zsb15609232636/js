@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<button>删除</button>
+<script>
+    let $el = $('<div><h2>新元素</h2><div>')
+      // 增加节点
+    // $('body').append($el)
+    // $el.appendTo('body')
+
+    // 插入节点
+    // prepend() 方法在被选元素的开头（仍位于内部）插入指定内容。
+    // prependTo() 方法在被选元素的开头（仍位于内部）插入指定内容。
+    // 差异在于语法：内容和选择器的位置，以及 prependTo() 无法使用函数来插入内容。
+    // var $newFirst =$('<li>0</li>')
+    // $newFirst.prependTo('ul')
+    // after()
+    // $('li:eq(2)').after('<li>3.5</li>')
+    // $('<li>4.5</li>').insertAfter('li:eq(3)')
+
+    // 删除节点
+    $("button").click(function () {
+        // $('li:last').remove() //删除节点
+        $('li:last').empty()//删除内容
+    })
+</script>
+</body>
+</html>

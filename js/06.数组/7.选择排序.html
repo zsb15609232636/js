@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>选择排序</title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+		/*
+			选择排序法:通过比较首先选出最小的数放在第一个位置上,
+			然后在其余的数中选择次小的数放在第二个位置,直到所有的数成为有序序列
+
+		*
+		* */
+		var  arr =[6,8,3,9,4,1,7]
+		for(var i=0;i<arr.length-1;i++){
+			for(var j = i+1;j<arr.length;j++){
+				if(arr[i]>arr[j]){
+					var tmp = arr[i];
+					arr[i] = arr[j];
+					arr[j]= tmp;
+				}
+			}
+		}
+		alert(arr);
+		</script>
+	</body>
+</html>

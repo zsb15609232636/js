@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+git:
+git默认安装完之后 设置git的名字和Emily
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+
+git config --list  git的版本列表
+
+
+git的三个区
+工作区
+暂存区
+作为过渡层
+避免误操作
+保护工作区和版本区
+分支处理
+版本区
+
+获取git仓库
+1.在现有项目或目录下导入所有文件到git中
+git init
+
+2.从服务器克隆一个现有的Git仓库
+git colne
+git status  //查看状态
+git add     //从工作区传到暂存区
+name
+.       //将工作区全部传到暂存区
+git commit  //从暂存区传到版本区
+-m '注释'   //暂存区所有的传到版本区
+-a -m '注释' //
+git checkout -- aaa.txt  从版本区检出到工作区
+git log    //查看提交次数
+
+对比：
+git diff 工作区和暂存区对比
+git diff --cached/git diff --staged暂存区和版本区对比
+git diff master/git diff HEAD 工作区和版本区对比
+撤销：
+git reset HEAD<file.name> 版本区还原到暂存区
+    git checkout -- <file.name> 从版本区或者暂存区检出到工作区（为版本区或者暂存区最后一步）
+        git checkout commit_id<file.name> 检出某个版本
+            git checkout commit_id aaa.txt  检出该版本的某个文件
+            .        检出该版本的所有文件
+            删除：
+            git rm <file.name>  //在暂存区中删除（先在工作区删除）
+                1
+                git rm -f <file.name>//不用先删除工作区（工作区和暂存区一起删除）
+                    git rm -cached <file.name>//工作区不删 只删除暂存区
+                        恢复：
+                        git reset --hard commit_id
+                        HEAD^  //还原上一个版本
+                        HEAD~<num>
+                            git reflog  //检查每一步操作
+
+                            同步到远程仓库
+                            ssh
+                            ssh-keygen -t rsa -C "1158272418@qq.com"   //生成安全协议（绑定过后就不用管了）
+
+                            git remote //查看远程仓库
+                            git remote add orgin https://github.com/zsb15609232636/git-cs.git//增加远程仓库orgin（名字自己取）  后面是仓库地址
+
+                            -v  //查看远程仓库及地址
+                            git push -u orgin master  //将本地master分支提交到远程仓库(username:zsb15609232636  password:zsb199020)
+                            git clone https://github.com/zsb15609232636/helloTest.git (在目录下打开git命令行执行git clone git_id 来下载代码)
+
+
+                            多人协作解决冲突
+                            git fetch
+                            git diff master origin/master
+                            git merge origin/master
+                            git pull（将远端的和本地的版本区相比较）
+
+                            git分支
+                            git branch  //查看分支
+                            git branch new1  新建new1的分支
+                            -d
+                            --merged
+                            --no-merged
+                            git checkout
+                            git checkout new1 //切换到new1的分支
+                            -b
+                            git merge
+
+                            git tag 查看里程碑
+                            git tag v1.0做个里程碑的标记
+                            git push origin v1.0向仓库传输一个1.0的里程碑
+</body>
+</html>

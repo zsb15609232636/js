@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+<p>
+    作用域链：在a函数的内部创建b函数，A函数在执行的时候，会创建其A函数的作用域， 那么函数B在创建的时候，会引用A的作用域，
+    函数B在执行的时候，是会引用函数A的作用域的。所以，像这种函数作用域的嵌套就组成了所谓的函数作用域链。
+    当在自身作用域内找不到该变量的时候，会沿着作用域链逐步向上查找，若在全局作用域内部仍找不到该变量，则会抛出异常。
+    1.闭包就是内部函数保存到外部<br/>
+    2.坏处：造成内存泄露<br/>
+    3.作用：<br/>
+          1.可以做累加<br/>
+          2.可以做缓存<br/>
+</p>
+<script>
+    // 作用1.累加
+    // function a() {
+    //
+    //     var aa=100
+    //     function b() {
+    //         aa++;
+    //         console.log("b内部"+aa)
+    //     }
+    //     return b;
+    // }
+    // let demo=a()
+    // console.log(typeof(demo))
+    // demo()  //101
+    // demo()   //102
+    // demo()   //103
+
+
+    //实现缓存
+    // function test(){
+    //     var num =100;
+    //     function a() {
+    //         num++;
+    //         console.log(num)
+    //     }
+    //     function b() {
+    //        num--;
+    //        console.log(num)
+    //     }
+    //     return [a,b]
+    // }
+    // var myArr =test()
+    // myArr[0](); //101
+    // myArr[1](); //100
+
+
+
+    function test() {
+        var arr=[]
+        for (var i=0;i<5;i++){
+            // 产生闭包
+            arr[i]=function () {
+                document.write(i+" ")
+            }
+
+            //解决闭包  立即执行函数
+            // (function (j) {
+            //   // j =0
+            //   arr[j]=function () {
+            //       document.write(j+" ")
+            //   }
+            // }(i))
+        }
+        return arr;
+    }
+    var myArr=test();
+    for (var j=0;j<5;j++){
+        myArr[j]()
+    }
+   //结果为5 5 5 5 5（先产生5个函数的数组，test里面返回了一个myArr和i   此时i为5   ）
+    //模块化开发，防止污染全局变量
+</script>
+</body>
+</html>

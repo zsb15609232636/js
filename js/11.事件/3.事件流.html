@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件流</title>
+</head>
+<body>
+<style>
+    #id1{
+        width: 200px;
+        height: 200px;
+        background-color: royalblue;
+    }
+    #id2{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+    ul li{
+        width: 100px;
+        background-color: #78b4ff;
+        margin-bottom: 10px;
+    }
+</style>
+<p>
+    事件流描述的是页面接受事件的顺序<br/>
+    事件流的三个阶段：捕获 目标 冒泡<br/>
+    阻止冒泡<br/>  <!--evt.stopPropagation()-->
+    事件委托机制：利用事件冒泡的原理，把本应添加给某元素上的事件委托给他的父级（外层）
+</p>
+<div id="id1">
+    <div id="id2">
+
+    </div>
+</div>
+<ul id="ul">
+
+</ul>
+<script>
+    let out =document.getElementById('id1')
+    let inner = document.getElementById('id2')
+
+    inner.onclick=function (e) {
+        let evt = e||event
+        //阻止冒泡
+        evt.stopPropagation()
+        console.log("inner")
+    }
+    out.onclick=function () {
+        console.log("out")
+    }
+
+    let oul =document.getElementById('ul')
+    for (let i=0;i<5;i++){
+        let oli=  document.createElement('li')
+        oli.innerHTML=i
+        oul.append(oli)
+    }
+    oul.onclick=function (e) {
+        let evt = e||event
+        var  _target =evt.target || evt.srcElement;
+        if(_target.nodeName.toUpperCase()=='LI'){
+            console.log(_target.innerHTML)
+        }
+    }
+</script>
+</body>
+</html>

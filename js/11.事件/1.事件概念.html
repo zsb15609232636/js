@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件</title>
+</head>
+<body>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        background: red;
+    }
+</style>
+<div id="test">aaa</div>
+<!--鼠标事件-->
+<!--<button onclick="myClick()">鼠标单击</button>-->
+<!--<button ondblclick="myDBClick()">鼠标双击</button>-->
+<!--<button onmousedown="myMouseDown()" onmouseup="myMouseUp()">鼠标按下和抬起</button>-->
+<!--<button onmouseover="myMouseOver()" onmouseout="myMouseOut()">鼠标悬浮和离开</button>-->
+<!--<button onmousemove="myMouseMove()">鼠标移动</button>-->
+<!--<button onmouseenter="myMouseEnter()" onmouseleave="myMouseLeave()">鼠标进入和离开</button>-->
+
+<!--键盘事件-->
+<!--<input id="name" type="text" onkeydown="myKeyDown(this.id)" onkeyup="myKeyUp(this.id)">-->
+
+<!--HTML事件-->
+<from>
+    <!--load：文档加载完成-->
+    <!--resize：窗口尺寸变化-->
+    <!--scroll：滚动条移动-->
+    <!--onsubmit：表单提交-->
+    <input type="submit" value="提交">
+    <!--select：被选中的时候-->
+    <input type="text" id="name" onselect="mySelect(this.id)">
+    <!--change：内容被改变-->
+    <input type="text" id="name2" onchange="myChange(this.id)">
+    <!--focus：得到光标-->
+    <input type="text" id="name3" onfocus="myFocus()">
+    <input type="text" id="name4" onblur="myFocus()">
+</from>
+<script>
+    var oDiv=document.getElementById('test')
+    let ofrom =document.getElementsByTagName('form')[0]
+    // 1.事件基础
+      //javaScript 事件是由访问web页面的用户引起的一系列操作
+    // 2.事件处理函数
+    //       分为：鼠标事件  键盘事件  HTML事件
+    //         鼠标事件
+    //             click:单击鼠标左键或者按下回车键时触发。这点对确保易访问性很重要，意味着onclick事件处理程序既可以通过键盘也可以通过鼠标执行。
+    //             dblclick:双击鼠标左键时触发。
+
+    //             mousedown:鼠标按钮被按下（左键或者右键）时触发。不能通过键盘触发。
+    //             mouseup:鼠标按钮被释放弹起时触发。不能通过键盘触发。
+
+    //             mouseover:鼠标移入目标元素上方。鼠标移到其后代元素上时会触发。
+    //             mouseout:鼠标移出目标元素上方。
+
+    //             mouseenter:鼠标移入元素范围内触发，该事件不冒泡，即鼠标移到其后代元素上时不会触发。
+    //             mouseleave:鼠标移出元素范围时触发，该事件不冒泡，即鼠标移到其后代元素时不会触发。
+    //             mousemove:鼠标在元素内部移到时不断触发。不能通过键盘触发。
+    // 键盘事件
+            // keydown：按键按下
+            // keyup：按键抬起
+            // keypress：按键按下抬起
+
+   // HTML事件
+
+            // window.onload = function () {
+            //     console.log("文档加载完毕！");
+            // };
+            // /*窗口尺寸变化*/
+            // window.onresize = function () {
+            //     console.log("窗口变化！")
+            // };
+            // /*滚动条移动*/
+            // window.onscroll = function () {
+            //     console.log("滚动");
+            // }
+            //     表单提交
+            // ofrom.onsubmit=function () {
+            //     console.log('submit')
+            //     return false
+            // }
+
+            // /*打印选中的文本*/
+            // function mySelect(id) {
+            //     var text = document.getElementById(id).value;
+            //     console.log(text);
+            // }
+            // /*内容被改变时*/
+            // function myChange(id) {
+            //     var text = document.getElementById(id).value;
+            //     console.log(text);
+            // }
+            // /*得到光标*/
+            // function myFocus() {
+            //     console.log("得到光标！");
+            // }
+
+
+
+    // 3.事件对象
+
+    // 4.事件默认行为及阻止方式
+    // 5.DOM2级事件处理程序
+    // 6.事件委托机制
+</script>
+</body>
+</html>

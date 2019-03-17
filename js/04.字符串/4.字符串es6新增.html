@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>字符串模板</title>
+</head>
+<body>
+<h2>字符串模板</h2>
+<p>关于字符串的东西----`${变量名字}`  优点：可以随意的换行<p>
+    <script>
+        {
+        let name ="string";
+        let age =18;
+        let String =`这个人叫${name},年龄是${age}`
+        console.log(String)
+        }
+
+
+
+        {
+            let data=[
+                {name:'张三' ,age:18},
+                {name:'李四' ,age:24},
+                {name:'王五' ,age:16}
+            ]
+            window.onload=function () {
+                let oul = document.querySelector('#ul');
+                for(let i=0;i<data.length;i++){
+                    let oLi =document.createElement('li')
+                    oLi.innerHTML=`<span>${data[i].name}</span>
+                    <span>${data[i].age}</span>`;
+                    oul.appendChild(oLi)
+                }
+            }
+        }
+
+
+        {
+            // 新增1：字符串查找 includes
+            let str ='apple banana pear';
+                // str.indexOf(要找的东西) 返回索引(位置)，没有找到为-1
+                // str.includes(要找的东西) 返回值true/false
+            console.log(str.indexOf('banana'))//找到的是一个位置
+            console.log(str.includes('banana'))//true
+            //判断浏览器是否是Chrome
+            if(navigator.userAgent.includes('Chrome')){
+                console.log('是chrome')
+            }else{
+                console.log('不是Chrome')
+            }
+
+            //新增2： 字符串是否以XXX开头  startsWith()  返回true/false
+            let str2 ="https://www.baidu.com"
+            console.log(str2.startsWith('http'))
+
+            //新增3：字符串是否以xxx结尾  endsWith()  返回true/false
+            let str3 ='https://www.baidu.com'
+            console.log(str3.endsWith('com'))
+
+            //新增4：repeat(次数) 重复
+            let str4='张三'
+            console.log(str4.repeat(5))
+
+            //padStart(填充后字符串的长度,填充的值)  从开始位置进行填充
+            let str5 ='apple';
+            let padStr ='xxx';
+            console.log(str5.padStart(str5.length+padStr.length,padStr))
+
+            //padEnd(填充后字符串的长度,填充的值)  从结束位置进行填充
+            let str6 ='apple';
+            let padStr2 ='xxx';
+            console.log(str6.padEnd(str6.length+padStr2.length,padStr2))
+        }
+
+    </script>
+<ul id="ul"></ul>
+</body>
+</html>

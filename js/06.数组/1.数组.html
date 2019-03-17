@@ -1,0 +1,46 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>数组</title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<!--数据类型-->
+		<!--
+		1.基本数据类型
+		   数字
+		   字符串
+		   布尔值
+		  复合数据类型  null undefined
+
+		2.复合数据类型
+		数组：存储大量的数据
+
+
+		数组的概念：
+		字面上的意思是一组数据  一组的数据（不一定都是数字）
+		-->
+		<script type="text/javascript">
+			//1.使用new 运算符创建数组
+			//参数:如果当前的参数,只有一个,并且这个参数是数字的话.数组长度为10 的数组
+			var arr = new Array(1,true,'hello');
+			alert(arr);
+			var arr2 =new Array(10);
+			alert(arr2);
+
+//			2.省略new运算符创建数组
+			var arr3 =Array(1,true,'hello')
+			alert(arr3);
+
+//			3.通过常量来创建数组
+//			1.在数组中存储的数据,一般情况下叫做数组中的元素
+//			2.数组元素访问是,通过下标完成,下标,也叫作索引,从0开始
+			var arr4=[1,true,'hello'];
+            alert(arr4)
+			alert(arr4[0])
+		</script>
+
+	</body>
+</html>111

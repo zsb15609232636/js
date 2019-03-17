@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>栈和队列</title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/*
+			 栈结构：从一个口进 从同一个口出 【先进后出】
+			 push()【格式】数组.push（元素）  在末尾增加元素
+			 		返回值 增加元素后整个的数组
+
+			 pop()【格式】 移除数组末尾的最后一个元素
+			               返回值 移除后剩余的元素
+
+			 * */
+			var arr=['张三','李四','王五'];
+			arr.push('赵六','冯七');
+			alert(arr)
+
+			var arr2=['张三','李四','王五'];
+			arr2.pop();
+			alert(arr2)
+			/*
+			 队列
+			 队列结构：从一头进 从另一头出
+			 特点：先进先出
+			push()
+
+			shift()
+			【格式】数组.shift()
+			功能：从数组的头部取下一个元素
+			返回值：取剩下的元素
+
+			unshift()
+			【格式】数组.unshift（参数。。。）
+			功能：从数组的头部插入数组
+			返回值：插入元素以后，数组的长度
+
+			*/
+			// var arr3=['钢铁侠','绿巨人','黑寡妇']
+			// arr3.shift();
+			// alert(arr3)
+
+			// var arr4=['钢铁侠','绿巨人','黑寡妇']
+			// arr4.unshift('超人','绿巨人');
+			// alert(arr4);
+
+
+		</script>
+	</body>
+</html>

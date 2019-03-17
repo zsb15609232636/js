@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>字符串</title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+
+		<script type="text/javascript">
+			/*
+			 字符串概念
+			 js中将所有单引号和双引号括起来的都叫做字符串
+			 */
+
+//			1.通过new运算符创建
+            var str = new String('hello');
+            alert(str)
+
+//          2.new 可以省略
+            var str2=String(true);
+            alert(typeof str2);//object 对象有属性和函数
+
+//          3.通过常量创建字符串
+            var str3 ='hello';
+            alert(str3)
+
+//          4.字符串的属性 length 返回的是当前字符串中字符的个数,通过字符的下标来访问该字符
+//            字符串一旦建立他们的值就不能改变 要改变某个变量保存的字符串 首先要销毁原来的字符串 然后再用另一个包含新值的字符串填充该变量
+			var str4 ='hello';
+			alert(str4.length);
+			alert(str4[1]);
+
+		</script>
+	</body>
+</html>

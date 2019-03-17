@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类和继承</title>
+</head>
+<body>
+<script>
+    <!--面向对象，类-->
+    let aaa='string';
+   const Person= class Person{
+        constructor(name,age){
+            console.log(`构造函数执行了, ${name},${age}`)
+            this.name=name;
+            this.age=age;
+        }
+        showName(){
+            return `名字为：${this.name}`
+        }
+        showAge(){
+            return `名字为：${this.age}`
+        }
+
+        // aaa(){
+        //     return '随便了...'
+        // }
+
+       [aaa](){
+            return '随便了'
+       }
+
+    }
+    let p1=new Person('String',18)
+    console.log(p1.showName(),p1.showAge())
+
+    console.log(p1[aaa]());//p1[aaa]()==>p1.string()
+    console.log(p1.string());
+</script>
+
+</body>
+</html>

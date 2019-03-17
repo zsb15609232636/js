@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animate</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background: #78b4ff;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+<button>显示</button>
+<button>隐藏</button>
+<button>停止</button>
+<script>
+    $("button:first").click(function () {
+        //show()大小透明度都改变
+        // $('div').show(3000)
+
+        // fadeIn() 透明度改变
+        // $('div').fadeIn(3000)
+
+        // slideUp()  像拉窗帘一样
+        // $('div').slideDown()
+
+        // animate
+        //     同时改变
+        // $('div').animate({
+        //     width:500,
+        //     height:600
+        // })
+        //  顺序改变
+        $('div').animate({
+            width:500
+        },5000).animate({
+            height:600
+        },5000)
+    })
+    $("button:eq(1)").click(function () {
+        // $('div').hide(3000)
+        // $('div').fadeOut(3000)
+        // $('div').slideUp()
+        // $('div').animate({
+        //         width:200,
+        //         height:200
+        // }
+        // )
+
+        $('div').animate({
+            width:200
+        },5000).animate({
+            height:200
+        },5000)
+    })
+    $("button:last").click(function () {
+        $('div').stop(true)//添加true回选择所有动画
+    })
+</script>
+</body>
+</html>

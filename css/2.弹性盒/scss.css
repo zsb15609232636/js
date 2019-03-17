@@ -1,0 +1,20 @@
+.box {
+  width: 1000px;
+  height: 500px;
+  border: 3px solid #78b4ff;
+  display: flex; }
+
+.box div {
+  height: 100px;
+  background-color: red;
+  border: solid 1px #000000;
+  flex-grow: 1;
+  flex-shrink: 1; }
+
+.box div:nth-child(2) {
+  order: -1;
+  flex-grow: 3;
+  flex-shrink: 0;
+  flex-basis: 300px; }
+
+/*# sourceMappingURL=scss.css.map */

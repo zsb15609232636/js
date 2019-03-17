@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点遍历</title>
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<div id="content">
+    <ul>
+        <li><p class="vip">1</p></li>
+        <li><p>2</p></li>
+        <li><p>3</p></li>
+        <li><p>4</p></li>
+        <li><p>5</p></li>
+    </ul>
+</div>
+<script>
+   let $li2=$('li:eq(1)')
+    $li2.children().css('background','red')
+    $li2.parent().css('color','yellow')
+    $li2.parents('#content').append('<h2>新元素</h2>')
+
+   // $().find()后代中所有
+    $('#content').find('.vip').css({
+        background:'black',
+        color:'white'
+    })
+    // $li2.next().css({fontSize:'20x'})
+    // $li2.prev().css({fontSize:'30x'})
+
+   //siblings兄弟
+    $li2.siblings().css('fontWeight','bold')
+
+   // jQuery first() 方法  返回被选元素的首个元素。
+   // jQuery last() 方法  返回被选元素的最后一个元素。
+   // jQuery eq() 方法   返回被选元素中带有指定索引号的元素
+   // jQuery filter() 方法 允许您规定一个标准。不匹配这个标准的元素会被从集合中删除，匹配的元素会被返回
+   // jQuery not() 方法 返回不匹配标准的所有元素
+</script>
+</body>
+</html>

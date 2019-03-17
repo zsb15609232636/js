@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链和继承</title>
+</head>
+<body>
+<p>
+    1.原型prototype  让相同的方法在内存中储存一份（提高性能）
+        在构造函数中的方法 可以看成是css中的style
+        在原型中的方法 可以看成是css中的class
+    2.基于原型的继承
+        1.Object.create()
+        2.原形继承图示
+    3.原型链
+</p>
+<script>
+    function Person(name,age) {
+        this.name=name;
+        this.age=age;
+    }
+    Person.prototype.sayHello=function () {
+        alert(this.name)
+    }
+    //1.创建了一个对象
+    //2.将this指向这个对象
+    //3.执行构造函数
+    //4.返回这个对象
+
+    function Student(name,age,id) {
+        Person.apply(this,[name,age])
+        this.id=id
+    }
+    Student.prototype=Object.create(Person.prototype)
+    Student.prototype.study=function () {
+
+    }
+
+</script>
+</body>
+</html>

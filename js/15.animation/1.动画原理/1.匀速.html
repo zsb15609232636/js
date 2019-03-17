@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>匀速</title>
+</head>
+<body>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    div{
+        width: 100px;
+        height: 100px;
+        background-color: black;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+    }
+</style>
+<div id="div">
+
+</div>
+<script>
+    let speedx=3;
+    let speedY=3;
+    let div =document.getElementById('div')
+    function move() {
+        // Window.getComputedStyle()方法返回一个对象，
+        // parseInt() 函数可解析一个字符串,并返回一个整数
+        let currentlet = parseInt(window.getComputedStyle(div).left)
+        let currentTop = parseInt(window.getComputedStyle(div).top)
+        let left = currentlet+speedx;
+        let top = currentlet+speedY;
+        div.style.left=left+'px'
+        div.style.top=top+'px'
+    }
+        setInterval(function () {
+            move()
+        },20)
+
+</script>
+</body>
+</html>

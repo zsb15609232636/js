@@ -1,0 +1,26 @@
+<html>
+<head>
+    <title>跨域</title>
+</head>
+<body>
+<script type="text/javascript">
+    createdJson('http://www.ky.gov.cn:8081/user4.php?cb=hide',function(data){
+        console.log(data.name);
+    });
+
+    function createdJson(url,fn){
+        var script =document.createElement('script')
+        var reg= /cb=([^&]+)/;
+        script.src=url;
+        var cbName=url.match(reg)[1];
+        window[cbName]=fn;
+        document.body.appendChild(script);
+        script.onload=function(){
+            document.body.removeChild(script);
+            delete window[cbName];
+        }
+    }
+
+</script>
+</body>
+</html>

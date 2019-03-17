@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM2级事件处理程序</title>
+</head>
+<body>
+<style>
+    #id1{
+        width: 200px;
+        height: 200px;
+        background-color: royalblue;
+    }
+    #id2{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<p>
+DOM2级事件处理程序
+   添加事件监听器：addEventListener(事件名，处理函数，布尔值)  布尔值表示是否冒泡
+   移除事件监听器：removeEventListener(事件名，处理函数)
+   IE下的事件监听器：attachEvent(事件名，处理函数)
+                     detachEvent(事件名，处理函数)
+</p>
+<div id="id1">
+    <div id="id2">
+
+    </div>
+</div>
+<script>
+    let out =document.getElementById('id1')
+    let inner = document.getElementById('id2')
+
+    out.addEventListener('click',foo,false)
+    out.addEventListener('click',bar,false)
+    out.removeEventListener('click',foo)
+    inner.addEventListener('click',int,false)
+    function foo() {
+        console.log("outer")
+    }
+    function bar() {
+        console.log("bar")
+    }
+    function int() {
+        console.log('inner')
+    }
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>二维数组</title>
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+	</head>
+	<body>
+		<script type="text/javascript">
+		/*
+		 *系统提供排序方法
+		 *reverse()逆向排序
+		 *
+		 *
+		 *
+		 * sort()
+		 * 功能：将数组中的元素升序排序
+		 *
+		 *
+		 *
+		*/
+		var arr =[10,50,30,40];
+		arr.reverse();
+		alert(arr);
+
+		var arr2=[5,4,3,6,2];
+		arr2.sort();
+		alert(arr2);
+
+        var arr3=[5,8,3,6,2];
+        arr3.sort(function (x,y) {
+			return y-x
+        });
+        alert(arr3);
+
+
+		</script>
+	</body>
+</html>

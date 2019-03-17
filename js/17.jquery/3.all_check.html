@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>all_check</title>
+    <script src="js/jquery-3.3.1.js"></script>
+    <style>
+        th,td{
+            width: 50px;
+            height: 30px;
+            background-color: red;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<table>
+<thead>
+<tr>
+    <th><input type="checkbox"></th>
+    <th>姓名</th>
+    <th>年龄</th>
+    <th>爱好</th>
+</tr>
+</thead>
+<tbody>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>黄忠</td>
+        <td>80</td>
+        <td>射箭</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>关羽</td>
+        <td>35</td>
+        <td>骑马</td>
+    </tr>
+    <tr>
+        <td><input type="checkbox"></td>
+        <td>赵云</td>
+        <td>26</td>
+        <td>使枪</td>
+    </tr>
+</tbody>
+</table>
+<script>
+    // prop() 方法设置或返回被选元素的属性和值。
+    // 当该方法用于返回属性值时，则返回第一个匹配元素的值。
+    // 当该方法用于设置属性值时，则为匹配元素集合设置一个或多个属性/值对。
+    $('thead input').change(function () {
+        var isChecked=$(this).prop('checked')
+        console.log(isChecked)// 返回true 或者false
+        $('tbody input').prop('checked',isChecked)
+    })
+    $("tbody input").change(function () {
+        var allCount=$('tbody input').length
+        var checkCount =$('tbody input:checked').length
+        var isAllChecked= allCount=== checkCount
+        $('thead input').prop('checked',isAllChecked)
+    })
+</script>
+</body>
+</html>

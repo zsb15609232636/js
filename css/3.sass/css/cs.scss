@@ -1,0 +1,149 @@
+h2{font-size: 30px;font-weight: bold;color: blue;}
+p{font-size: 14px;};
+//
+
+
+
+
+//变量
+//$width :100px;
+//div {width: $width;}
+//span {width: $width;}
+
+
+//作用域  全局和局部思想
+//$width:50px;
+//div{
+//  width: 100px;
+//  width: $width;
+//}
+
+//数据类型
+//数字
+//$width:100;
+//div{width: $width + rem;}
+
+//字符串
+
+
+//布尔值
+$bool: true;
+p{
+  @if($bool){
+    display: block;
+  }@else{
+    display: none;
+  }
+}
+//颜色值
+//列表值
+
+
+//嵌套
+//选择器嵌套
+
+ul{
+  margin: 0;
+  li{
+    list-style: none;
+    a{
+      border:1px red solid;
+    }
+  }
+}
+//属性嵌套
+div{
+  background: {
+    color: red;
+    repeat:no-repeat;
+    position: 0 0;
+  }
+}
+//伪类嵌套
+a{
+  &:hover{
+    border: 1px red solid;
+  }
+}
+
+//  插值
+//变量只能用在属性值中；
+//插值可以用在选择器和属性名中
+$val:color;
+div{
+  background-#{$val}:red ;
+}
+
+$i :2;
+.box_#{$i}{
+  border: 1px red solid;
+}
+
+//前后都有
+@for $k from 1 through 3{
+  .box_#{$k}{
+    border: 1px red solid;
+  }
+}
+
+//前有后没有
+@for $j from 11 to 13{
+  .box_#{$j}{
+    border: 2px solid blue;
+  }
+}
+
+//运算
+//+  - * /
+//一个rem 等于64个像素
+$num:64;
+div{
+  width: 400 / $num + rem;
+}
+
+//if
+//for
+//while
+$f : 3;
+@while($f > 0){
+  .box_#{$f}{
+    border:1px red solid ;
+  }
+  $f : $f - 1;
+}
+
+
+//代码重用
+//继承"@extend"
+.btn{
+  width: 100px;
+  height: 50px;
+}
+.btn-success{
+  @extend .btn;
+  background: green;
+}
+//占位符"%placeholder"
+%btn2{
+  width: 100px;
+  height: 50px;
+}
+.btn2-success{
+  @extend %btn2;
+  background: green;
+}
+
+//混合宏"@mixin"
+@mixin btn3($w:10px,$h:20px){
+  width: $w;
+  height: $h;
+}
+.btn3-success{
+  @include btn3;
+  background-color: red;
+}
+.btn3-error{
+  @include btn3(50px,100px);
+  background-color: green;
+}
+

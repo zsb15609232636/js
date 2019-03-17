@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>类和继承</title>
+</head>
+<body>
+<script>
+    <!--面向对象，类-->
+    class Person{
+        constructor(name,age){
+            console.log(`构造函数执行了, ${name},${age}`)
+            this.name=name;
+            this.age=age;
+        }
+        showName(){
+            return `名字为：${this.name}`
+        }
+        showAge(){
+            return `名字为：${this.age}`
+        }
+
+    }
+    let p1=new Person('String',18)//es6里面没有class提升的功能  必须放在函数之后
+    console.log(p1.showName(),p1.showAge())
+</script>
+
+</body>
+</html>
