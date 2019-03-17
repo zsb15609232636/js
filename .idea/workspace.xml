@@ -54,7 +54,7 @@
           <entry key="cs" value="3" />
           <entry key="css" value="9" />
           <entry key="css--trace" value="2" />
-          <entry key="html" value="540" />
+          <entry key="html" value="542" />
           <entry key="js" value="10" />
           <entry key="login" value="3" />
           <entry key="map" value="4" />
@@ -69,7 +69,7 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key="CSS" value="9" />
-          <entry key="HTML" value="540" />
+          <entry key="HTML" value="542" />
           <entry key="JSON" value="3" />
           <entry key="JavaScript" value="10" />
           <entry key="PHP" value="28" />
@@ -84,7 +84,7 @@
         <counts>
           <entry key="cs" value="4" />
           <entry key="css" value="104" />
-          <entry key="html" value="34015" />
+          <entry key="html" value="34021" />
           <entry key="js" value="26" />
           <entry key="login" value="161" />
           <entry key="person" value="46" />
@@ -96,7 +96,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="104" />
-          <entry key="HTML" value="34015" />
+          <entry key="HTML" value="34021" />
           <entry key="JSON" value="46" />
           <entry key="JavaScript" value="26" />
           <entry key="PHP" value="452" />
@@ -125,8 +125,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/1.git/git.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="569">
-              <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
+            <state relative-caret-position="-924">
+              <caret line="41" column="24" lean-forward="true" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -149,11 +149,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/3.sass/css/cs.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-297">
               <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/css/2.弹性盒/1.弹性盒.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-693">
+              <caret line="34" column="16" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/2.弹性盒/2.cs.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="464">
+              <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -173,7 +191,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/css/1.git" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -227,8 +245,8 @@
         <option value="$PROJECT_DIR$/css/2.弹性盒/css.css" />
         <option value="$PROJECT_DIR$/css/2.弹性盒/scss.scss" />
         <option value="$PROJECT_DIR$/css/2.弹性盒/1.弹性盒.html" />
-        <option value="$PROJECT_DIR$/css/2.弹性盒/2.cs.html" />
         <option value="$PROJECT_DIR$/css/1.git/git.html" />
+        <option value="$PROJECT_DIR$/css/2.弹性盒/2.cs.html" />
       </list>
     </option>
   </component>
@@ -451,12 +469,12 @@
       <workItem from="1552195516795" duration="1380000" />
       <workItem from="1552210639416" duration="930000" />
       <workItem from="1552216830489" duration="643000" />
-      <workItem from="1552785353800" duration="16719000" />
+      <workItem from="1552785353800" duration="17097000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="334147000" />
+    <option name="totallyTimeSpent" value="334525000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -784,20 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/2.弹性盒/1.弹性盒.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-528">
-          <caret line="23" column="41" lean-forward="true" selection-start-line="23" selection-start-column="41" selection-end-line="23" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/css/2.弹性盒/2.cs.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="17" column="60" lean-forward="true" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/16.ajax/1.get/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1023">
@@ -850,13 +854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/1.git/git.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="569">
-          <caret line="92" column="9" lean-forward="true" selection-start-line="92" selection-start-column="9" selection-end-line="92" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/css/3.sass/2.sass用法.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -885,6 +882,27 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-297">
           <caret line="9" column="22" lean-forward="true" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/1.git/git.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-924">
+          <caret line="41" column="24" lean-forward="true" selection-start-line="41" selection-start-column="24" selection-end-line="41" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/2.弹性盒/1.弹性盒.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-693">
+          <caret line="34" column="16" lean-forward="true" selection-start-line="34" selection-start-column="16" selection-end-line="34" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/2.弹性盒/2.cs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
         </state>
       </provider>
     </entry>
